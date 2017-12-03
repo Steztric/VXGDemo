@@ -35,12 +35,17 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\iPhone\Release</OutputPath>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>_UNIFIED__;__MOBILE__;__IOS__;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodesignKey>iPhone Developer</CodesignKey>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <MtouchFloat32>true</MtouchFloat32>
+    <MtouchFastDev>false</MtouchFastDev>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchExtraArgs>--gcc_flags="-lbz2 -liconv -lstdc++"</MtouchExtraArgs>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
@@ -65,15 +70,15 @@
     <DebugType>full</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\iPhone\Debug</OutputPath>
-    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
-    <MtouchFastDev>true</MtouchFastDev>
-    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchFastDev>false</MtouchFastDev>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
     <MtouchFloat32>false</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <IOSDebuggerPort>57431</IOSDebuggerPort>
@@ -81,7 +86,8 @@
     <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchExtraArgs>--gcc_flags="-lbz2 -liconv -lstdc++" -v</MtouchExtraArgs>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -128,12 +134,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\..\..\..\..\Code\FishSpyEchoPro\Frameworks\ffmpeg\applestore\ffmpeg.framework">
-      <Kind>Framework</Kind>
+    <NativeReference Include="..\..\..\lib\shared.ffmpeg\libMediaPlayerSDK.a">
+      <Kind>Static</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
-    <NativeReference Include="..\..\..\..\..\Code\FishSpyEchoPro\lib\static.ffmpeg\libMediaPlayerSDK.a">
-      <Kind>Static</Kind>
+    <NativeReference Include="..\..\..\..\Frameworks\ffmpeg\applestore\ffmpeg.framework">
+      <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
   </ItemGroup>
